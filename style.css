@@ -1,0 +1,111 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: changeBackground 16s infinite;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 624px) {
+  @keyframes changeBackground {
+    0% { background-image: url('/image-1.jpg'); }
+    33.333% { background-image: url('/image-2.png'); }
+    66.666% { background-image: url('/image-3.png'); }
+    100% { background-image: url('/image-4.jpg'); }
+  }
+}
+
+
+
+.background-curtain {
+  background-color: rgb(1, 23, 17, 0.8);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+.solenidade-text {
+  background-image: url('/Solenidade-text.png');
+  width: 312px;
+  height: 30px;
+  background-repeat: no-repeat;
+
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+}
+
+.digit {
+  margin: 0 5px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  background: linear-gradient(to bottom, #161E1B 0%, #00150D 100%);
+  box-shadow: 0 4px 4px 0 rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 10px;
+  min-height: 50px;
+  font-size: 3rem;
+}
+
+p {
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+
+@media screen and (max-width: 375px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .digit {
+    min-width: 40px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  img {
+    max-width: 300px;
+  }
+}
