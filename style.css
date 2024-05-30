@@ -19,11 +19,11 @@ body {
 
 @media screen and (max-width: 624px) {
   @keyframes changeBackground {
-    0% { background-image: url('/image-1.jpg'); }
-    25% { background-image: url('/image-2.png'); }
-    50% { background-image: url('/image-5.jpg'); }
-    75% { background-image: url('/image-3.png'); }
-    100% { background-image: url('/image-4.jpg'); }
+    0% { background-image: url('/image 4.png'); }
+    25% { background-image: url('/image 5.png'); }
+    50% { background-image: url('/image 6.png'); }
+    75% { background-image: url('/image 8.png'); }
+    100% { background-image: url('/image 9.png'); }
   }
 }
 
