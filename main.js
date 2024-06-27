@@ -1,5 +1,7 @@
 import './style.css';
 
+console.log('prod');
+
 var pageIsMobile = (function () {
   try {
     var isMobile = {
