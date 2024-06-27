@@ -43,6 +43,8 @@ if (!pageIsMobile) {
   document.body.appendChild(title);
 } else {
   const targetDate = new Date('2024-06-27T00:00:00').getTime();
+  let newDate = document.querySelector('.new-date');
+  let comemoration = document.querySelector('.comemoration');
 
   const countdownInterval = setInterval(() => {
     const currentDate = new Date().getTime();
@@ -60,8 +62,53 @@ if (!pageIsMobile) {
 
     if (timeDifference < 0) {
       clearInterval(countdownInterval);
-      console.log('aconteceu');
+      let groupElement = document.querySelector('.group');
+      let bgCurtain = document.querySelector('.background-curtain');
+
+      groupElement.remove();
+      bgCurtain.remove();
+      newDate.style.display = 'block';
+      setInterval(() => {
+        let params = {
+          particleCount: 500, // Quantidade de confetes
+          spread: 90, // O quanto eles se espalham
+          startVelocity: 70, // Velocidade inicial
+          origin: { x: 0, y: 0.5 }, // Posição inicial na tela
+          angle: 45, // Ângulo em que os confetes serão lançados
+        };
+        // Joga confetes da esquerda pra direita
+        confetti(params);
+
+        // Joga confetes da direita para a esquerda
+        params.origin.x = 1;
+        params.angle = 135;
+        confetti(params);
+      }, 5000);
     }
+
+    newDate.addEventListener('click', () => {
+      const audio = new Audio('/maria,maria.mp3');
+      newDate.style.display = 'none';
+      comemoration.style.display = 'flex';
+
+      audio.volume = 0.3;
+      audio.play();
+
+      let params = {
+        particleCount: 500, // Quantidade de confetes
+        spread: 90, // O quanto eles se espalham
+        startVelocity: 70, // Velocidade inicial
+        origin: { x: 0, y: 0.5 }, // Posição inicial na tela
+        angle: 45, // Ângulo em que os confetes serão lançados
+      };
+      // Joga confetes da esquerda pra direita
+      confetti(params);
+
+      // Joga confetes da direita para a esquerda
+      params.origin.x = 1;
+      params.angle = 135;
+      confetti(params);
+    });
   }, 1000);
 
   function padZero(number) {
